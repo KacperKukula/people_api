@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, Patch, Post, Put } from "@nestjs/common";
 
-@Controller('/health')
-export class HealthController {
+@Controller('/appStatus')
+export class AppStatusController {
 
     @Get()
     handleGet(): string {
@@ -29,7 +29,6 @@ export class HealthController {
     }
   
     private handleRequest(): string {
-      console.log('Healthy');
       return 'Healthy';
     }
 }

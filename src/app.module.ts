@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './mod/user/user.module';
-import { HealthController } from './mod/health/health.controller';
+import { AppStatusController } from './mod/appStatus/appStatus.controller';
 
 @Module({
   imports: [
@@ -16,7 +16,7 @@ import { HealthController } from './mod/health/health.controller';
   ],
   controllers: [
     AppController,
-    HealthController
+    AppStatusController
   ],
   providers: [AppService],
 })
