@@ -11,11 +11,14 @@ export class Person {
     @Column({ type: 'varchar', length: 64 })
     surname: string
 
-    @Column({ type: 'varchar', length: 32 })
+    @Column({ type: 'varchar', length: 32, nullable: true })
     email: string
 
-    @Column({ type: 'varchar', length: 200 })
+    @Column({ type: 'varchar', length: 200, nullable: true, })
     description: string
+
+    @Column({ type: 'varchar', length: 64, nullable: true })
+    profession: string
 
     @Column({ type: 'char', length: 1 })
     gender: string

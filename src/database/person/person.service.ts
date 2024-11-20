@@ -21,4 +21,22 @@ export class PersonService {
 
         return this.personRepository.save(person);
     }
+
+    async findMany() {
+        const count = await this.personRepository.count()
+
+        return this.personRepository
+            .createQueryBuilder('entity')
+            .orderBy('RANDOM()')
+            .limit(Math.min(count, 1000))
+            .getMany();
+    }
+
+    getById(id: number) {
+        return this.personRepository.findOneBy({ id })
+    }
+
+    patchById(id: number, dataToPatch) {
+        return this.personRepository.update(id, dataToPatch)
+    }
 }
